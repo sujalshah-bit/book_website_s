@@ -1,0 +1,79 @@
+.admin-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .admin-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .admin-form input,
+  .admin-form select {
+    padding: 10px;
+    font-size: 14px;
+    width: calc(20% - 15px);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .submit-btn {
+    padding: 10px 20px;
+    width: 250px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .admin-table th, .admin-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .admin-table th {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .admin-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .edit-btn {
+    background-color: #ffa500;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .delete-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .edit-btn:hover, .delete-btn:hover {
+    opacity: 0.8;
+  }
+  

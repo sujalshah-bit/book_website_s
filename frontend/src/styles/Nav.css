@@ -1,0 +1,63 @@
+
+nav{
+    background-color: #f8f8f8;
+    display: flex;
+    width: 100%;
+    padding: 12px;
+    align-items: center;
+    justify-content: space-around;
+    /* border-bottom: 1px solid #979797; */
+}
+
+.input_section{
+    /* background-color: #937DC2; */
+    position: relative;
+    display: flex;
+    border:2px solid #979797;
+    width: 300px;
+    background-color: white;
+    border-radius: .25rem;
+    align-items: center;
+}
+
+.input_section input{
+    width: 280px;
+    border-radius: .25rem;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    background-color: white;
+    border: none;
+    /* border-radius: 0px; */
+    outline: none;
+    /* background: blue; */
+}
+.input_section #searcBtn{
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+    cursor: pointer;
+    background: #fff;
+    width: 30px;
+    height: 31.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul{
+    gap: 10px;
+    /* background: red; */
+    display: flex;
+    align-items: center;
+}
+ul > li{
+    color: #937DC2;
+    font: bolder;
+    font-size: large;
+
+}
+.signup_login{
+    color: white;
+
+
+}
+

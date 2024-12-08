@@ -1,0 +1,46 @@
+.book_detail_component{
+    display: flex;
+    margin-top: 30px;
+    /* flex-direction: column; */
+}
+.book_detail_component img{
+    width: 33%;
+    object-fit: contain;
+    
+    max-height: 650px;
+}
+.info{
+    padding: 20px;
+    width: 77%;
+}
+
+.info h1{
+    font-size: xx-large;
+    margin-bottom: 10px;
+}
+
+.author{
+   color: #4F4C57;
+   margin-bottom: 10px;
+}
+
+.ratings{
+    margin-bottom: 30px;
+}
+
+.price {
+    font-size: larger;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.description{
+    color: #4F4C57;
+    font-size: medium;
+    margin-bottom: 10px;
+}
+.btn_container{
+    display: flex;
+    gap: 3px;
+    
+}

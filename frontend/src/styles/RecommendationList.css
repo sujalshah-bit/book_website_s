@@ -1,0 +1,23 @@
+.recommendations-section {
+  padding: 2rem 0;
+}
+
+.recommendations-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.recommendations-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .recommendations-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+} 

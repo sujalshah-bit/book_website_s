@@ -1,0 +1,30 @@
+.card{
+    /* background-color: red; */
+    width: 274px;
+    display: flex;
+    flex-direction: column;
+    color: black;
+}
+.card > img{
+    height: 414px;
+    border-radius: 2%;
+}
+
+.card-info{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.card-info h1{
+    margin-top: 10px;
+    font-size: medium;
+}
+.ellipse {
+    height: 20px; /* Set a fixed height */
+    overflow: hidden; /* Hide overflow text */
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    text-overflow: ellipsis; /* Add ellipsis (...) for overflow text */
+    display: block; /* Ensure it behaves like a block element */
+    width: 100%; /* Set width to 100% of the parent */
+}

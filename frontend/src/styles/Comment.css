@@ -1,0 +1,49 @@
+.comment_container {
+    background-color: white;
+    width: 650px;
+    margin: 40px auto;
+    border-radius: 10px;
+    /* background-color: red; */
+}
+.comment_container h1{
+    text-align: center;
+    font-size: x-large;
+}
+.input_container {
+    margin-top: 50px;
+    display: flex;
+    padding: 4px;
+
+}
+.input_container input{
+    outline: none;
+    width: 85%;
+}
+.input_container button{
+    outline: none;
+}
+
+.comment{
+    margin: 15px 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #f0f0f0;
+}
+.comment:last-child {
+    margin-bottom: 0;
+}
+
+.comment h4{
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.comment p{
+    font-size: 14px;
+}
+
+.no_comment{
+    display: block;
+   text-align: center;
+   height: 50px;
+   padding-top: 25px;
+}

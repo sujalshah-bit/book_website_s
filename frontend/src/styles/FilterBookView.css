@@ -1,0 +1,94 @@
+.books_container {
+  width: 1350px;
+  margin: auto;
+  /* background-color: red; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 30px 0px;
+  grid-auto-flow: row;
+  place-items: center;
+  grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . .";
+}
+/* Styles for the filter bar */
+.filter-container {
+  width: 1300px;
+  margin: auto;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+  background-color: #f8f8f8;
+  /* background-color: red; */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.filter-item label {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.filter-item select,
+.filter-item input {
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.filter-item select:focus,
+.filter-item input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.25);
+}
+
+/* Filtered Books Section */
+/* .filtered-books {
+    margin-top: 20px;
+  }
+  
+  .filtered-books h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .filtered-books ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .filtered-books li {
+    margin-bottom: 10px;
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .filtered-books h4 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .filtered-books p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #555;
+  }
+   */

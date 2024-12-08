@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./components/admin/loginFormAdmin.css">
+</head>
+<body>
+    <iframe src="./components/admin/LoginFormAdmin.html" style="width: 100%; height: 500px; border: none;"></iframe>
+    <div class="container">
+        <!-- Admin Login Form -->
+        <div id="login-form">
+            <h2>Admin Login</h2>
+            <form id="admin-login-form">
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" name="username" required>
+
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+            <p id="login-message"></p>
+        </div>
+
+        <!-- Admin Signup Form -->
+        <div id="signup-form">
+            <h2>Admin Signup</h2>
+            <form id="admin-signup-form">
+                <label for="signup-username">Username:</label>
+                <input type="text" id="signup-username" name="username" required>
+
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" name="password" required>
+
+                <button type="submit">Signup</button>
+            </form>
+            <p id="signup-message"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

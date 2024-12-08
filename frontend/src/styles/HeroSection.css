@@ -1,0 +1,78 @@
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 91vh;
+    padding: 20px;
+    background-color: #f0f0f0; /* Optional background color for contrast */
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Maximum width for larger screens */
+}
+
+.text-content {
+    flex: 1;
+    padding-right: 20px; /* Space between text and image */
+}
+
+.text-content h1 {
+    color: #000000; /* Black color for heading */
+    font-size: 2.5rem; /* Responsive font size */
+}
+
+.text-content p {
+    color: #000000; /* Black color for paragraph */
+    width: 350px;
+    font-size: 1.2rem; /* Responsive font size */
+    margin: 30px 0 30px; /* Margin for spacing */
+}
+
+.hero-button {
+    background-color: #937DC2; /* Primary color for button */
+    color: #FFFFFF; /* White text color for button */
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #7a6b9e; /* Darker shade on hover */
+}
+
+.image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-content img {
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column; /* Stack elements on smaller screens */
+        align-items: center; /* Center align */
+    }
+
+    .text-content {
+        padding-right: 0; /* Remove padding on smaller screens */
+        text-align: center; /* Center text */
+    }
+
+    .hero-content img {
+        margin-top: 20px; /* Add margin above image */
+    }
+}

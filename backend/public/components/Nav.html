@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Navigation Bar</title>
+  <style>
+    /* Global styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navigation bar styles */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #937DC2;
+      padding: 10px;
+    }
+
+    /* Left side logo styles */
+    .logo {
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* Right side menu styles */
+    .menu {
+      display: flex;
+      align-items: center;
+    }
+
+    .menu a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+    }
+
+    .menu a:hover {
+      color: #d9d9d9;
+    }
+
+    .menu i {
+      font-size: 20px;
+      margin-left: 20px;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu {
+        margin-top: 10px;
+      }
+
+      .menu a, .menu i {
+        margin-left: 0;
+        margin-right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#" class="logo">Logo</a>
+    <div class="menu">
+      <a href="#">Heart</a>
+      <a href="#">Signup</a>
+      <a href="#">Login</a>
+      <i class="fa fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- Include Font Awesome for the hamburger menu icon -->
+  <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+</body>
+</html>
