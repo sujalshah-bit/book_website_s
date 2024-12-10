@@ -11,13 +11,9 @@ const Admin = () => {
   const { books, fetchBooks, addBook, updateBook, deleteBook } = useStore();
   const [form, setForm] = useState({
     id: "",
-    // ISBN10: "",
     title: "",
     author: "",
     price: "",
-    // rating: "",
-    // availability: "",
-    // reviews_count: "",
     image_url: "",
     url: "",
     categories: "",
@@ -52,41 +48,83 @@ const Admin = () => {
     });
   };
 
+  const validateBookInput = (bookData) => {
+    const errors = [];
+
+    // Title validation
+    if (!bookData.title || bookData.title.trim().length === 0) {
+      errors.push("Title is required");
+    } else if (bookData.title.length > 255) {
+      errors.push("Title must be less than 255 characters");
+    }
+
+    // Author validation
+    if (!bookData.author || bookData.author.trim().length === 0) {
+      errors.push("Author is required");
+    } else if (bookData.author.length > 255) {
+      errors.push("Author must be less than 255 characters");
+    }
+
+    // Price validation
+    if (!bookData.price) {
+      errors.push("Price is required");
+    } else if (isNaN(bookData.price) || bookData.price < 0) {
+      errors.push("Price must be a valid positive number");
+    }
+
+    // URL validation (optional field)
+    if (bookData.url && bookData.url.length > 255) {
+      errors.push("URL must be less than 255 characters");
+    }
+
+    // Image URL validation (optional field)
+    if (bookData.image_url && bookData.image_url.length > 255) {
+      errors.push("Image URL must be less than 255 characters");
+    }
+
+    // Categories validation (should be valid JSON)
+    if (bookData.categories) {
+      try {
+        // If categories is a string, try to parse it
+        if (typeof bookData.categories === 'string') {
+          const categoriesArray = bookData.categories.split(',').map(cat => cat.trim());
+          // Validate each category
+          if (categoriesArray.some(cat => cat.length === 0)) {
+            errors.push("Categories cannot be empty");
+          }
+        }
+      } catch (error) {
+        errors.push("Categories must be valid comma-separated values");
+      }
+    }
+
+    return errors;
+  };
+
   // Add a new book (server-side)
   const handleAddBook = async (e) => {
     e.preventDefault();
-    if (
-      form.title &&
-      form.author &&
-      form.price &&
-      form.description &&
-      // form.rating &&
-      // form.availability &&
-      // form.ISBN10 &&
-      // form.reviews_count &&
-      form.image_url &&
-      form.url &&
-      form.categories
-    ) {
-      try {
-        await addBook({ ...form });
-        setForm({
-          id: "",
-          // ISBN10: "",
-          title: "",
-          author: "",
-          description: "",
-          price: "",
-          // rating: "",
-          // availability: "",
-          // reviews_count: "",
-          image_url: "",
-          url: "",
-          categories: "",
-        });
-      } catch (error) {
-        console.error("Error adding book:", error);
-      }
+    const validationErrors = validateBookInput(form);
+    
+    if (validationErrors.length > 0) {
+      alert(validationErrors.join('\n'));
+      return;
+    }
+
+    try {
+      await addBook({ ...form });
+      setForm({
+        id: "",
+        title: "",
+        author: "",
+        description: "",
+        price: "",
+        image_url: "",
+        url: "",
+        categories: "",
+      });
+    } catch (error) {
+      console.error("Error adding book:", error);
     }
   };
 
@@ -99,18 +137,21 @@ const Admin = () => {
   // Update book details (server-side)
   const handleUpdateBook = async (e) => {
     e.preventDefault();
+    const validationErrors = validateBookInput(form);
+    
+    if (validationErrors.length > 0) {
+      alert(validationErrors.join('\n'));
+      return;
+    }
+
     try {
       await updateBook(form);
       setForm({
         id: "",
-        // ISBN10: "",
         title: "",
         author: "",
-        price: "",
         description: "",
-        // rating: "",
-        // availability: "",
-        // reviews_count: "",
+        price: "",
         image_url: "",
         url: "",
         categories: "",
@@ -161,20 +202,7 @@ const Admin = () => {
             placeholder="Price"
             onChange={handleChange}
           />
-          {/* <input
-            type="text"
-            name="ISBN10"
-            value={form.ISBN10}
-            placeholder="ISBN-10"
-            onChange={handleChange}
-          /> */}
-          {/* <input
-            type="number"
-            name="reviews_count"
-            value={form.reviews_count}
-            placeholder="Reviews Count"
-            onChange={handleChange}
-          /> */}
+
           <input
             type="text"
             name="image_url"
@@ -203,24 +231,6 @@ const Admin = () => {
             placeholder="Categories (comma-separated)"
             onChange={handleChange}
           />
-          {/* <input
-            type="number"
-            name="rating"
-            value={form.rating}
-            placeholder="Rating"
-            min="0"
-            max="5"
-            step="0.1"
-            onChange={handleChange}
-          /> */}
-          {/* <select name="availability" value={form.availability} onChange={handleChange}>
-            <option value="">Select Availability</option>
-            <option value="In Stock">In Stock</option>
-            <option value="Out of Stock">Out of Stock</option>
-            <option value="Only 13 left in stock - order soon.">
-              Only 13 left in stock - order soon.
-            </option>
-          </select> */}
 
           <button type="submit" className="submit-btn">
             {isEditing ? "Update Book" : "Add Book"}
@@ -236,9 +246,6 @@ const Admin = () => {
                 <th>Author</th>
                 <th>Price</th>
                 <th>description</th>
-                {/* <th>Reviews</th> */}
-                {/* <th>Rating</th> */}
-                {/* <th>Availability</th> */}
                 <th>Actions</th>
               </tr>
             </thead>
@@ -248,10 +255,7 @@ const Admin = () => {
                   <td>{book.title}</td>
                   <td>{book.author}</td>
                   <td>${book.price}</td>
-                  <td>{book.description}</td>
-                  {/* <td>{book.reviews_count}</td> */}
-                  {/* <td>{book.rating}</td> */}
-                  {/* <td>{book.availability}</td> */}
+                  <td className="description-cell">{book.description}</td>
                   <td>
                     <button
                       className="edit-btn"

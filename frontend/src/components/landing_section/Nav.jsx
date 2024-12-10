@@ -94,7 +94,14 @@ function Nav({ show_input = false }) {
             <li style={{ cursor: "pointer" }}>
               <button>
                 <Link className="signup_login" to={"/user/signup"}>
-                  Sign up
+                  User Sign up
+                </Link>
+              </button>
+            </li>
+            <li style={{ cursor: "pointer" }}>
+              <button>
+                <Link className="signup_login" to={"/admin/signup"}>
+                  Admin Sign up
                 </Link>
               </button>
             </li>

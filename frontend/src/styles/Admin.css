@@ -44,6 +44,14 @@
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
+    max-width: 200px;
+  }
+  
+  .admin-table td.description-cell {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
   }
   
   .admin-table th {
