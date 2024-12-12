@@ -79,8 +79,8 @@ const Login = () => {
               required
             >
               <option value="select role" disabled>Select Role</option>
-              <option value="admin">Admin</option>
-              <option value="user">User</option>
+              <option value="admin">admin</option>
+              <option value="user">user</option>
             </select>
           </div>
           <button type="submit">Login</button>

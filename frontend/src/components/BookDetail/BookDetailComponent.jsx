@@ -63,9 +63,9 @@ const BookDetailComponent = () => {
 
   // Fetch book details when the component mounts or when id changes
   useEffect(() => {
-    const checkAdminStatus = async () => {
+    const checkUserStatus = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/check-admin', {
+        const response = await axios.get('http://localhost:5000/check-user', {
           withCredentials: true, // Include cookies for authentication
         });
         
@@ -74,12 +74,12 @@ const BookDetailComponent = () => {
         }
       } catch (error) {
         navigate('/login')
-        console.error('Error checking admin status:', error);
+        console.error('Error checking user status:', error);
       }
     };
     
 
-    checkAdminStatus();
+    checkUserStatus();
     fetchWishlist();
     if (id) {
       fetchBook(id);

@@ -163,9 +163,17 @@ const isAdmin = (req, res, next) => {
     next();
 };
 
+//check user
+const isUser = (req, res, next) => {
+    if (req.user.role !== 'user' && req.user.role !== 'admin') {
+        return res.status(403).send('Access denied');
+    }
+    next();
+};
+
 
 app.get('/', (re, res) => {
-
+    res.status(200).send("Hello World")
 })
 
 // Admin and User Routes
@@ -525,6 +533,11 @@ app.get('/check-already-rated/:book_id/ratings', verifyToken, (req, res) => {
 //check adming
 app.get('/check-admin', verifyToken, isAdmin, (req, res) => {
     res.status(201).send("Admin")
+});
+
+//check user
+app.get('/check-user', verifyToken, isUser, (req, res) => {
+    res.status(201).send("User")
 });
 
 // Feedback Routes
